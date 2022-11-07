@@ -1,6 +1,6 @@
 {
   "name": "postcss-generate-asset-php",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate a PHP file with an array of asset information",
   "scripts": {
     "test": "jest --coverage && eslint ."
