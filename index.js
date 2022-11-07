@@ -12,7 +12,7 @@ module.exports = () => {
 			}
 
 			const cssString = root.nodes.toString().replace( /\s+/g, '' );
-			const hash = createHash( 'md4' ).update( cssString ).digest( 'hex' );
+			const hash = createHash( 'md5' ).update( cssString ).digest( 'hex' );
 
 			const fileData = {
 				version: hash,

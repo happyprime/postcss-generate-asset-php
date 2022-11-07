@@ -8,11 +8,11 @@ const plugin = require( './' );
 const TEMP_CSS_FILES = {
 	'style01.css': {
 		css: '.container { font-size: 1rem; }',
-		result: `<?php\nreturn array( 'version' => '9158bd9497a56a81c91f5718718eba33' );\n`,
+		result: `<?php\nreturn array( 'version' => '2f9463e10cc17e39201358f05878820e' );\n`,
 	},
 	'style02.css': {
 		css: '.container { font-size: 2rem; }',
-		result: `<?php\nreturn array( 'version' => 'c8d21f0a71c61120e4abe5e308b89cc1' );\n`,
+		result: `<?php\nreturn array( 'version' => 'b0073a34b30d69589dfb5f3e8e86cb8d' );\n`,
 	}
 }
 
