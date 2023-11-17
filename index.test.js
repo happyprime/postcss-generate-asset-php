@@ -41,9 +41,9 @@ test( 'hash generation', () => {
         files.map( file => {
             const filePath = join( tmpdir(), file );
 
-			processFile( filePath );
-
-			expect( TEMP_CSS_FILES[file].result ).toMatch( readFileSync( filePath + '.php' ).toString() );
+			processFile( filePath ).then( () => {
+				expect( TEMP_CSS_FILES[file].result ).toMatch( readFileSync( filePath + '.php' ).toString() );
+			} )
         })
     );
 })
