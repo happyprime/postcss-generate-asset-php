@@ -7,6 +7,7 @@ module.exports = () => {
 		postcssPlugin: 'postcss-generate-asset-php',
 		Once( root, { result } ) {
 			// Only create a hash file if CSS is being output to a file.
+			/* istanbul ignore if */
 			if ( undefined === result.opts.to ) {
 				return;
 			}
