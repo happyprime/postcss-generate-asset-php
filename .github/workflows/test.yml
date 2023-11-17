@@ -1,7 +1,13 @@
-name: Test
+name: Run Jest tests
+
 on:
   push:
+    branches:
+      - trunk
   pull_request:
+    branches:
+      - trunk
+
 env:
   FORCE_COLOR: 2
 jobs:
@@ -10,19 +16,25 @@ jobs:
     strategy:
       matrix:
         node-version:
+          - 20
           - 18
           - 16
           - 14
-          - 12
     name: Node.js ${{ matrix.node-version }}
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Verify Node dependency cache
+        uses: actions/cache@v3
+        with:
+          path: ./node_modules
+          key: node-dependencies-${{ hashFiles('package-lock.json') }}
+          restore-keys: node-dependencies-
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm install
       - name: Run unit tests
         run: npm run test

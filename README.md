@@ -1,5 +1,7 @@
 # PostCSS Generate Asset PHP
 
+**Note:** This is mostly an archive and likely unused by anyone except some of our straggling projects. Please don't use it. :)
+
 [PostCSS] plugin that generates a PHP file containing a hashed version number for a stylesheet.
 
 [PostCSS]: https://github.com/postcss/postcss
