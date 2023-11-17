@@ -1,7 +1,13 @@
 name: Test
+
 on:
   push:
+    branches:
+      - trunk
   pull_request:
+    branches:
+      - trunk
+
 env:
   FORCE_COLOR: 2
 jobs:
@@ -14,7 +20,6 @@ jobs:
           - 18
           - 16
           - 14
-          - 12
     name: Node.js ${{ matrix.node-version }}
     steps:
       - name: Checkout the repository
